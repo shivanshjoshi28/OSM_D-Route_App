@@ -2,6 +2,10 @@
 Implementation of <b>_Djikstra's Algorithm_</b> to find the shortest path from the source to destination.</br>
 Recognizing <b>vertex, edges & nodes from the map and implementing djikstra's on it.</br>
 Tested on the ground level with a distance radius of <b>200km.</b></br>
+
+## Nodes and edges in input graph
+![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Nodes/STC_Nodes.png)
+</br>
 ## Example 1 - My House to Uttarkashi
 ### Original Path
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Uttarkashi_Map_Original.png)
