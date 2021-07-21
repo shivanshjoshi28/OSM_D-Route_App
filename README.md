@@ -3,7 +3,7 @@ Implementation of <b>_Djikstra's Algorithm_</b> to find the shortest path from t
 Recognizing <b>vertex, edges & nodes from the map and implementing djikstra's on it.</br>
 Tested on the ground level with a distance radius of <b>200km.</b></br>
 
-## Nodes and edges in input graph
+## Marking Nodes and edges on the map
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Nodes/STC_Nodes.png)
 </br>
 ## Example 1 - My House to Uttarkashi
