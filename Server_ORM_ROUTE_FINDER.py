@@ -55,7 +55,6 @@ class Graph:
                 dict_node_length, key=lambda k: dict_node_length[k])
             del dict_node_length[current_source_node]
             if(current_source_node == dst):
-                #                 print("got Minimum distance from source to destination",distance[dst])
                 break
 
             for node_dist in self.adjlist[current_source_node]:
@@ -68,8 +67,6 @@ class Graph:
                     distance[adjnode] = distance[current_source_node] + \
                         length_to_adjnode
                     dict_node_length[adjnode] = distance[adjnode]
-#         for i in range(self.node_count) :
-#             print("Source Node ("+str(source)+")  -> Destination Node(" + str(i) + ")  : " + str(distance[i]))
         return distance[dst], parent
 
 
@@ -87,7 +84,6 @@ def Setup(a1, a2, a3, a4):
 
     # As We have to apply dijkstra's Algorithm and we know that the input nodes in djikstra algorithm is 0 index for the node , so first we given the number to all the nodes
     v = len(G.nodes)
-#     print("Total no of nodes are: ",v)
     di = {}
     index = 0
     for node in G.nodes(data=True):
@@ -107,32 +103,17 @@ def Setup(a1, a2, a3, a4):
         li.append([new_src, new_dst, weight])
     ox.plot_graph(G, edge_color="y", save=True, filepath="WebAppCurrImage.jpg")
     e = len(li)
-#     print("Total Number of Edges - ",e)
 
     return G, v, e, li, di
 
 
 def node_list_to_path(G, node_list):
-    """
-    Given a list of nodes, return a list of lines that together follow the path
-    defined by the list of nodes.
-    Parameters
-    ----------
-    G : networkx multidigraph
-    route : list
-        the route as a list of nodes
-    Returns
-    -------
-    lines : list of lines given as pairs ( (x_start, y_start), (x_stop, y_stop) )
-    """
     edge_nodes = list(zip(node_list[:-1], node_list[1:]))
     # print(edge_nodes)
     lines = []
     for u, v in edge_nodes:
         # if there are parallel edges, select the shortest in length
         data = min(G.get_edge_data(u, v).values(), key=lambda x: x['length'])
-        # print(u," to ",v)
-        # print(G.get_edge_data(u, v))
 
         # if it has a geometry attribute (ie, a list of line segments)
         if 'geometry' in data:
@@ -166,20 +147,6 @@ def calc_lat_long(G, path):
 
 
 def plot_path(lat, long, origin_point, destination_point):
-    """
-    Given a list of latitudes and longitudes, origin 
-    and destination point, plots a path on a map
-
-    Parameters
-    ----------
-    lat, long: list of latitudes and longitudes
-    origin_point, destination_point: co-ordinates of origin
-    and destination
-    Returns
-    -------
-    Nothing. Only shows the map.
-    """
-
     # adding the lines joining the nodes
     fig = go.Figure(go.Scattermapbox(
         name="Path",
@@ -228,7 +195,6 @@ server=app.server
 
 app.layout = html.Div([
     html.H1("ORM Route Finder - Djikstra's Algorithm Implementation"),
-    #     html.Div([html.Span("The Below detail can be found from here :  ",style={'color': 'Blue'}),html.A("https://www.openstreetmap.org/#map=16/30.3207/78.0549")]
     dcc.Link("All the latitude and longitude can be found from here :  ",
              href="https://www.openstreetmap.org/#map=16/30.3207/78.0549", target="_blank"),
     html.Br(),
@@ -260,17 +226,9 @@ app.layout = html.Div([
                 children='Find the Shortest Route'),
     html.Br(),
     html.Div(id='output-state'),
-    #     html.Br(),
-    #     dcc.Graph(
-    #         id='example-graph'
-    # #         figure=fig
-    #     ),
     html.Br(),
     html.Div(id='container'),
     html.Br(),
-    #     <p><img src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" width="20px" alt="">
-    #     Github repo: <a href="https://github.com/aviral10/Visualizing-Paths" target="_blank">https://github.com/aviral10/Visualizing-Paths</a></p>
-
     html.Div([html.Span("Github repo "), dcc.Link("https://github.com/shivanshjoshi28/OSM_Route_Finder",
                                                   href="https://github.com/shivanshjoshi28/OSM_Route_Finder", target="_blank"), ]),
     html.H3("©️ Created by Shivansh Joshi")
@@ -295,7 +253,6 @@ def getPath(parent, output_node_id_zero_indexed, input_node_id_zero_index, di):
 
 # As it seems to be nice,i.e path with the minimum distance
 
-#     Output('example-graph', 'figure'),
 
 
 @app.callback(Output('container', 'children'),
@@ -330,13 +287,10 @@ def update_output(n_clicks, input1, input2, input3, input4, src_long, src_lat, d
 
     ShortestDist, parent = g.Dijkstras_Shortest_Path(
         input_node_id_zero_index, output_node_id_zero_indexed, v)
-#     print(ShortestDist," meters")
-
     path = getPath(parent, output_node_id_zero_indexed,
                    input_node_id_zero_index, di)
     lat2, long2 = calc_lat_long(G, path)
     fig1 = plot_path(lat2, long2, origin_point, destination_point)
-#     return fig1
     return html.Div([dcc.Graph(figure=ImageGet()), html.Br(), html.H6("Shortest Path length = {} meters".format(ShortestDist), style={'color': 'Red', 'text-align': 'center'}), html.Br(), dcc.Graph(figure=fig1)])
 
 
