@@ -12,18 +12,10 @@ Tested on the ground level with a distance radius of <b>200km.</b></br>
 ## Web App Demo 2
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/WebApp1.png)
 </br>
+
 </br>
-## Example 1 - My House to Uttarkashi
+## Example - My House to Uttarkashi
 ### Original Path
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Uttarkashi_Map_Original.png)
 ### Our Output Path
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Uttarkashi_OutputPath.png)
-
-</br>
-</br>
-
-## Example 2 - My House to St. Thomas' College
-### Original Path
-![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/STC_Map_Original.png)
-### Our Output Path
-![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/STC_OutputPath.png)
