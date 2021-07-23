@@ -6,11 +6,12 @@ Tested on the ground level with a distance radius of <b>200km.</b></br>
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Nodes/STC_Nodes.png)
 </br>
 </br>
-## Web App Demo 1
-![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/WebApp2.png)
+## Web App Demo 
+<img src="DemoGIF.gif"/>
+<!-- ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/WebApp2.png)
 </br>
 ## Web App Demo 2
-![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/WebApp1.png)
+![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/WebApp1.png) -->
 
 ## Example My House to Uttarkashi
 
@@ -19,3 +20,5 @@ Tested on the ground level with a distance radius of <b>200km.</b></br>
 
 ### Our Output Path
 ![imagename](https://github.com/shivanshjoshi28/OSM_Route_Finder/blob/master/Image/Uttarkashi_OutputPath.png)
+
+
