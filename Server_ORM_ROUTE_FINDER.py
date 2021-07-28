@@ -79,7 +79,7 @@ def ImageGet():   # to get the graph in the image format that we have save
 def Setup(a1, a2, a3, a4):
     north, east, south, west = a1, a2, a3, a4    # input the graph detail
     # Downloading the map as a graph object
-    G = ox.graph_from_bbox(north, south, east, west, network_type='drive')
+    G = ox.graph_from_bbox(north, south, east, west, network_type='walk')    # we can also add the network_type as 'drive' which will show us the minimum path through drive, means it will not show the internal edges'
     # Plotting the map graph
 
     # As We have to apply dijkstra's Algorithm and we know that the input nodes in djikstra algorithm is 0 index for the node , so first we given the number to all the nodes
